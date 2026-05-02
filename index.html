@@ -25,7 +25,7 @@
     <a href="#hero" class="nav-logo">CAPIZ<span>DENTA</span></a>
 
     <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#schedule">Hours</a></li>
@@ -43,7 +43,7 @@
 
   <!-- MOBILE DROPDOWN MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="index.html#about" onclick="closeMobile()">About</a>
     <a href="#services" onclick="closeMobile()">Services</a>
     <a href="#gallery" onclick="closeMobile()">Gallery</a>
     <a href="#schedule" onclick="closeMobile()">Hours &amp; Booking</a>
@@ -88,51 +88,57 @@
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <div class="reveal">
-      <div class="section-tag">About CAPIZDENTA</div>
-      <h2>Your Smile,<br>Our Purpose</h2>
-      <p class="section-intro">
-        We believe your smile is more than a part of your face. It is a reflection of your confidence, joy, and personal story.
-      </p>
-    </div>
-
-    <div class="about-grid reveal">
-      <div class="about-img-wrap">
-        <div class="about-img-icon">🦷</div>
-        <div class="about-img-card">
-          <div class="stars">★★★★★</div>
-          <strong>"Kind, gentle, and very approachable."</strong>
-          <span>- Verified Patient, Capiz</span>
+  <!-- PREMIUM ABOUT SECTION -->
+  <section id="about" class="premium-about">
+    <div class="about-shell reveal">
+      <div class="about-visual">
+        <!-- Later image file:
+            images/client-interior.jpg
+            Controlled in CSS under .about-photo
+        -->
+        <div class="about-photo">
+          <div class="about-floating-card">
+            <div class="stars">★★★★★</div>
+            <strong>Gentle care in a calm clinic space</strong>
+            <span>Roxas City, Capiz</span>
+          </div>
         </div>
       </div>
 
-      <div class="about-text">
-        <p>CAPIZDENTA is a trusted dental clinic in Roxas City, Capiz, offering high-quality and accessible dental care at reasonable rates for the Capiznon community and beyond.</p>
-        <p>Our clinic is designed with patient comfort in mind: a calm, clean, and faith-filled environment where you do not feel like just another patient. The ambiance is soothing and relaxing, especially important for those who feel nervous about dental visits.</p>
-        <p><em>"Prevention is better than cure - visit your dentist before it hurts."</em></p>
+      <div class="about-copy">
+        <div class="section-tag">About CAPIZDENTA</div>
+        <h2>Your Smile,<br><em>Our Purpose</em></h2>
 
-        <a href="about.html" class="btn-outline-dark">Learn More About Us</a>
+        <p class="about-lead">
+          CAPIZDENTA provides thoughtful dental care in Roxas City, combining professional treatment,
+          patient comfort, and a calm clinic experience designed to make every visit feel easier.
+        </p>
 
-        <div class="about-pillars">
-          <div class="pillar">
-            <div class="pillar-title">Expert Hands</div>
-            <p>Professional skill backed by training in general and specialized dentistry.</p>
+        <p>
+          From preventive checkups to cosmetic, orthodontic, pediatric, and restorative services,
+          our clinic is built around clear guidance, gentle care, and accessible dentistry for the
+          Capiznon community.
+        </p>
+
+        <div class="about-highlights">
+          <div>
+            <span>01</span>
+            <strong>Comfort-first care</strong>
+            <p>A soothing environment for patients who feel nervous about dental visits.</p>
           </div>
-          <div class="pillar">
-            <div class="pillar-title">Compassionate Heart</div>
-            <p>Every patient is treated with kindness, patience, and genuine care.</p>
+          <div>
+            <span>02</span>
+            <strong>Accessible dentistry</strong>
+            <p>Quality dental care at reasonable rates for families and individuals.</p>
           </div>
-          <div class="pillar">
-            <div class="pillar-title">Accessible Rates</div>
-            <p>Quality dental care at fair, reasonable prices for all Capiznons.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Faith-Filled Space</div>
-            <p>A clinic rooted in values of service, community, and well-being.</p>
+          <div>
+            <span>03</span>
+            <strong>Trusted service</strong>
+            <p>Professional support from consultation to treatment planning.</p>
           </div>
         </div>
+
+        <a href="about.html" class="btn-about">Learn More About Us</a>
       </div>
     </div>
   </section>

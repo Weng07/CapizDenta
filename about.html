@@ -3,155 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us – CAPIZDENTA | Roxas City, Capiz</title>
+  <title>About Us - CAPIZDENTA | Roxas City, Capiz</title>
+
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- Shared stylesheet — one folder up from /pages/ -->
+
+  <!-- SHARED STYLESHEET -->
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Page-specific overrides for about.html */
-    .page-hero {
-      min-height: 40vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 5vw 60px;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(58,158,194,.12) 0%, transparent 70%),
-        var(--cream);
-    }
-    .breadcrumb {
-      font-size: .8rem;
-      color: var(--gray);
-      margin-bottom: 1rem;
-    }
-    .breadcrumb a {
-      color: var(--ocean);
-      text-decoration: none;
-    }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .page-content { padding: 60px 5vw 90px; max-width: 860px; }
-    .page-content p { color: var(--gray); line-height: 1.8; margin-bottom: 1.2rem; font-size: .97rem; }
-    .page-content h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 600;
-      margin: 2rem 0 .8rem;
-    }
-    .back-btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--navy); color: #fff;
-      padding: .7rem 1.5rem; border-radius: 50px;
-      text-decoration: none; font-size: .88rem; font-weight: 600;
-      transition: background .2s;
-      margin-top: 2rem;
-    }
-    .back-btn:hover { background: var(--ocean); }
-  </style>
 </head>
 <body>
 
-  <!-- NAV (mirrors index.html nav) -->
+  <!-- NAVBAR -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo">CAPIZ<span>DENTA</span></a>
+    <a href="index.html#hero" class="nav-logo">CAPIZ<span>DENTA</span></a>
+
     <ul class="nav-links">
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#services">Services</a></li>
-      <li><a href="../index.html#schedule">Hours</a></li>
-      <li><a href="../index.html#testimonials">Reviews</a></li>
-      <li><a href="../index.html#faq">FAQ</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#schedule">Hours</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <a href="../index.html#schedule" class="nav-cta">Book Appointment</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+
+    <button class="nav-cta" onclick="window.location.href='index.html#schedule'">
+      Book Appointment
+    </button>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="../index.html#about"        onclick="closeMobile()">About</a>
-    <a href="../index.html#services"     onclick="closeMobile()">Services</a>
-    <a href="../index.html#schedule"     onclick="closeMobile()">Hours &amp; Booking</a>
-    <a href="../index.html#testimonials" onclick="closeMobile()">Reviews</a>
-    <a href="../index.html#faq"          onclick="closeMobile()">FAQ</a>
-    <a href="../index.html#contact"      onclick="closeMobile()">Contact</a>
+    <a href="index.html#about" onclick="closeMobile()">About</a>
+    <a href="index.html#services" onclick="closeMobile()">Services</a>
+    <a href="index.html#gallery" onclick="closeMobile()">Gallery</a>
+    <a href="index.html#schedule" onclick="closeMobile()">Hours &amp; Booking</a>
+    <a href="index.html#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="index.html#faq" onclick="closeMobile()">FAQ</a>
+    <a href="index.html#contact" onclick="closeMobile()">Contact</a>
   </div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <div>
-      <div class="breadcrumb"><a href="../index.html">Home</a> / About Us</div>
+  <!-- ABOUT HERO -->
+  <section class="about-page-hero">
+    <div class="about-hero-content reveal">
+      <div class="breadcrumb">
+        <a href="index.html#hero">Home</a> / About Us
+      </div>
+
       <div class="section-tag">Our Story</div>
-      <h1>About<br><em>CAPIZDENTA</em></h1>
+
+      <h1>Thoughtful Dental Care<br><em>Rooted in Comfort</em></h1>
+
+      <p>
+        CAPIZDENTA brings professional dental care, gentle service, and a calm clinic experience
+        to patients across Roxas City and the Capiznon community.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <!-- PAGE CONTENT -->
-  <div class="page-content">
-    <h3>Who We Are</h3>
-    <p>CAPIZDENTA is a dental clinic in Roxas City, Capiz, Philippines, dedicated to providing high-quality, accessible dental care to the Capiznon community. We offer personalized general, cosmetic, orthodontic, and restorative dentistry services with a commitment to professional excellence and heartfelt service.</p>
-    <p>Our clinic is built on the belief that beauty and smiles are created — not just maintained. Every patient who walks through our doors deserves to feel heard, cared for, and confident when they leave.</p>
+  <!-- ABOUT CONTENT -->
+  <section class="about-page-main">
 
-    <h3>Our Mission</h3>
-    <p>To enhance, restore, and care for the smiles of our community with expert hands and a compassionate heart — because we know that a healthy smile today saves time, worry, and expense tomorrow.</p>
+    <!-- WHO WE ARE -->
+    <div class="about-page-grid reveal">
+      <div class="about-page-intro">
+        <div class="section-tag">Who We Are</div>
+        <h2>Where every smile is treated with purpose.</h2>
 
-    <h3>Our Values</h3>
-    <p><strong>Excellence</strong> — We maintain the highest standards of dental care and continuously improve our skills and practices.</p>
-    <p><strong>Compassion</strong> — Every patient is treated as an individual, not a case number. We listen, we empathize, and we serve with purpose.</p>
-    <p><strong>Accessibility</strong> — Quality dental care should be available to everyone. We offer reasonable rates without compromising on quality.</p>
-    <p><strong>Faith</strong> — Our clinic is a faith-filled space, rooted in the belief that we are called to serve our community with integrity and love.</p>
+        <p>
+          CAPIZDENTA is a dental clinic in Roxas City, Capiz, Philippines, dedicated to providing
+          high-quality, accessible dental care to the Capiznon community.
+        </p>
 
-    <h3>Visit Us</h3>
-    <p>We are located in Roxas City, Capiz, Philippines. Our clinic is open Monday and Wednesday through Sunday from 9:00 AM to 6:00 PM. We are closed on Tuesdays.</p>
-    <p>Walk-ins are always welcome for general consultations. Appointments are recommended for orthodontic and restorative procedures.</p>
+        <p>
+          We offer personalized general, cosmetic, orthodontic, pediatric, and restorative dentistry
+          with a commitment to professional excellence and heartfelt service.
+        </p>
 
-    <a href="../index.html" class="back-btn">← Back to Home</a>
-  </div>
+        <p>
+          Our clinic is built on the belief that beauty and smiles are created, not just maintained.
+          Every patient deserves to feel heard, cared for, and confident when they leave.
+        </p>
+      </div>
 
-  <!-- FOOTER (mirrors index.html footer) -->
+      <div class="about-page-card">
+        <span>Clinic Philosophy</span>
+        <h3>Prevention is better than cure.</h3>
+        <p>
+          We encourage every patient to visit before pain begins, because early care saves time,
+          worry, and expense.
+        </p>
+      </div>
+    </div>
+
+    <!-- MISSION + VISION -->
+    <div class="mission-vision-grid reveal">
+      <div class="mv-card">
+        <span>Our Mission</span>
+        <h3>Care that protects every smile.</h3>
+        <p>
+          To enhance, restore, and care for the smiles of our community with expert hands
+          and a compassionate heart, because a healthy smile today saves time, worry,
+          and expense tomorrow.
+        </p>
+      </div>
+
+      <div class="mv-card">
+        <span>Our Vision</span>
+        <h3>A trusted dental home for Capiz.</h3>
+        <p>
+          To become a leading dental clinic known for excellence, accessibility, and
+          patient-centered care, where every individual feels confident in their smile.
+        </p>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="about-values-grid reveal">
+      <div class="value-card">
+        <span>01</span>
+        <h3>Excellence</h3>
+        <p>We maintain high standards of dental care and continuously improve our skills and practices.</p>
+      </div>
+
+      <div class="value-card">
+        <span>02</span>
+        <h3>Compassion</h3>
+        <p>Every patient is treated as an individual, with patience, empathy, and genuine care.</p>
+      </div>
+
+      <div class="value-card">
+        <span>03</span>
+        <h3>Accessibility</h3>
+        <p>Quality dental care should be available to the community at reasonable rates.</p>
+      </div>
+
+      <div class="value-card">
+        <span>04</span>
+        <h3>Faith</h3>
+        <p>Our clinic is rooted in service, integrity, and love for the community we care for.</p>
+      </div>
+    </div>
+
+    <!-- VISIT PANEL -->
+    <div class="visit-panel reveal">
+      <div>
+        <div class="section-tag">Visit Us</div>
+        <h2>Plan your next visit with confidence.</h2>
+        <p>
+          We are open Monday and Wednesday through Sunday from 9:00 AM to 6:00 PM.
+          We are closed on Tuesdays. Walk-ins are welcome for general consultations,
+          while appointments are recommended for orthodontic and restorative procedures.
+        </p>
+      </div>
+
+      <a href="index.html#schedule" class="btn-about">Book an Appointment</a>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="nav-logo footer-logo" href="../index.html">CAPIZ<span>DENTA</span></a>
-        <p>Where beauty and smiles are created — not just maintained.</p>
+        <a class="nav-logo footer-logo" href="index.html#hero">CAPIZ<span>DENTA</span></a>
+        <p>Where beauty and smiles are created, not just maintained. Serving Roxas City and all of Capiz.</p>
+
         <div class="footer-socials">
-          <a class="social-btn" href="https://www.facebook.com/profile.php?id=100083309584253" target="_blank">📘</a>
-          <a class="social-btn" href="tel:+639544055391">📞</a>
-          <a class="social-btn" href="mailto:dental.talks@yahoo.com">✉️</a>
+          <a class="social-btn" href="https://www.facebook.com/profile.php?id=100083309584253" target="_blank" title="Facebook">📘</a>
+          <a class="social-btn" href="tel:+639544055391" title="Call us">📞</a>
+          <a class="social-btn" href="mailto:dental.talks@yahoo.com" title="Email">✉️</a>
         </div>
       </div>
+
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="../index.html#services">General Dentistry</a></li>
-          <li><a href="../index.html#services">Cosmetic Dentistry</a></li>
-          <li><a href="../index.html#services">Orthodontics</a></li>
-          <li><a href="../index.html#services">Restorative</a></li>
+          <li><a href="index.html#services">General Dentistry</a></li>
+          <li><a href="index.html#services">Cosmetic Dentistry</a></li>
+          <li><a href="index.html#services">Orthodontics</a></li>
+          <li><a href="index.html#services">Restorative</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Clinic</h4>
         <ul>
-          <li><a href="../index.html#about">About Us</a></li>
-          <li><a href="../index.html#testimonials">Reviews</a></li>
-          <li><a href="../index.html#schedule">Hours &amp; Booking</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#reviews">Patient Reviews</a></li>
+          <li><a href="index.html#schedule">Hours &amp; Booking</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:+639544055391">0954 405 5391</a></li>
+          <li><a href="tel:+639064353619">0906 435 3619</a></li>
           <li><a href="mailto:dental.talks@yahoo.com">dental.talks@yahoo.com</a></li>
           <li><a href="https://maps.app.goo.gl/qbGk37Xyy9yruc2S6" target="_blank">Roxas City, Capiz</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© 2025 CAPIZDENTA. All rights reserved.</span>
-      <span class="footer-quote">"Don't let the world change your smile."</span>
+      <span>© 2025 CAPIZDENTA. All rights reserved. Roxas City, Capiz, Philippines.</span>
+      <span class="footer-quote">"Don't let the world change your smile. Use your smile to change the world."</span>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- SHARED JAVASCRIPT -->
+  <script type="module" src="main.js"></script>
 </body>
 </html>
