@@ -1,2 +1,3 @@
 # CapizDenta
-A mock project for CapizDenta - but this repository is what to be used if they decide to buy it.
+[README.md](https://github.com/user-attachments/files/27293573/README.md)
+
