@@ -5,58 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAPIZDENTA – Dental Clinic | Roxas City, Capiz</title>
 
-  <!-- ─────────────────────────────────────────
-       GOOGLE FONTS
-       Cormorant Garamond = headings & logo
-       DM Sans            = body text & UI
-  ───────────────────────────────────────── -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- ─────────────────────────────────────────
-       ELFSIGHT PLATFORM SCRIPT
-       Powers the Google Reviews widget below.
-       The async attribute means it loads without
-       blocking the rest of the page.
-       Source: https://elfsight.com
-  ───────────────────────────────────────── -->
+  <!-- ELFSIGHT SCRIPT -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
 
-  <!-- ─────────────────────────────────────────
-       EMAILJS SDK
-       Sends booking confirmation emails directly
-       from the browser — no server needed.
-       Free tier: 200 emails/month.
-       Docs: https://www.emailjs.com/docs/
-       TO ACTIVATE:
-         1. Sign up at emailjs.com
-         2. Create a service (Gmail, Yahoo, etc.)
-         3. Create an email template
-         4. Replace the IDs in js/main.js under
-            the EMAILJS CONFIG section
-  ───────────────────────────────────────── -->
+  <!-- EMAILJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- Main stylesheet (all styles live in css/styles.css) -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- ✅ FIXED CSS PATH -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <!-- ══════════════════════════════════════════
-       NAVIGATION BAR
-       Fixed at top of viewport always.
-       .scrolled class added by JS when user
-       scrolls > 40px — adds drop shadow.
-       Desktop: full links + CTA button
-       Mobile: collapses to hamburger icon
-  ══════════════════════════════════════════ -->
+  <!-- NAVIGATION -->
   <nav id="navbar">
-    <!-- Logo: "CAPIZ" in navy, "DENTA" in coral red -->
     <a href="#hero" class="nav-logo">CAPIZ<span>DENTA</span></a>
 
-    <!-- Desktop nav links — hidden on mobile via CSS -->
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <!-- ✅ FIXED ABOUT LINK -->
+      <li><a href="about.html">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#schedule">Hours</a></li>
@@ -65,835 +36,75 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <!-- Book CTA button — calls scrollToSection() in main.js -->
-    <button class="nav-cta" onclick="scrollToSection('#schedule')">Book Appointment</button>
+    <button class="nav-cta" onclick="scrollToSection('#schedule')">
+      Book Appointment
+    </button>
 
-    <!-- Hamburger button — visible only on mobile (CSS) -->
-    <!-- JS toggles .open on #mobileMenu when clicked -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <button class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- ──────────────────────────────────────────
-       MOBILE DROPDOWN MENU
-       Hidden by default (CSS display:none).
-       JS adds .open class when hamburger clicked.
-       Each <a> calls closeMobile() to collapse
-       the menu after the user taps a link.
-  ────────────────────────────────────────── -->
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about"        onclick="closeMobile()">About</a>
-    <a href="#services"     onclick="closeMobile()">Services</a>
-    <a href="#gallery"      onclick="closeMobile()">Gallery</a>
-    <a href="#schedule"     onclick="closeMobile()">Hours &amp; Booking</a>
-    <a href="#reviews"      onclick="closeMobile()">Reviews</a>
-    <a href="#faq"          onclick="closeMobile()">FAQ</a>
-    <a href="#contact"      onclick="closeMobile()">Contact</a>
+    <a href="about.html">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#schedule">Hours & Booking</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
   </div>
 
-
-  <!-- ══════════════════════════════════════════
-       HERO SECTION
-       Full-viewport landing area.
-       Background: layered CSS radial gradients
-       + a decorative circle arc (.hero-bg-arc).
-       No images needed — pure CSS.
-       Stats row animates via CSS @keyframes fadeUp.
-  ══════════════════════════════════════════ -->
+  <!-- HERO -->
   <section id="hero">
-    <!-- Decorative soft circle in the background (CSS only) -->
-    <div class="hero-bg-arc"></div>
-
     <div class="hero-content">
-      <!-- Location pill badge above the headline -->
       <div class="hero-badge">Roxas City, Capiz · Philippines</div>
 
-      <!-- Main headline — <em> gets italic coral style via CSS -->
-      <h1>Beauty &amp; Smiles<br><em>are Created</em></h1>
+      <h1>Beauty & Smiles<br><em>are Created</em></h1>
 
-      <!-- Subheading / tagline paragraph -->
       <p class="hero-sub">
         Personalized dental care combining professional skill with heartfelt service.
-        General, cosmetic, orthodontic &amp; restorative dentistry — all in one welcoming clinic.
       </p>
 
-      <!-- Two call-to-action buttons -->
       <div class="hero-btns">
-        <a href="#schedule" class="btn-primary">Book an Appointment</a>
+        <a href="#schedule" class="btn-primary">Book Appointment</a>
         <a href="#services" class="btn-outline">Explore Services</a>
       </div>
-
-      <!-- Quick stats — update these numbers as clinic grows -->
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num">5.0★</div>
-          <div class="stat-label">Google Rating</div>
-        </div>
-        <div>
-          <div class="stat-num">120+</div>
-          <div class="stat-label">Happy Patients</div>
-        </div>
-        <div>
-          <div class="stat-num">6</div>
-          <div class="stat-label">Days a Week</div>
-        </div>
-      </div>
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       ABOUT SECTION
-       Two-column grid: image panel (left) + text (right).
-       On mobile (<900px), stacks to one column (CSS).
-       .reveal = scroll-reveal animation class.
-       JS IntersectionObserver adds .visible when
-       the element enters the viewport.
-  ══════════════════════════════════════════ -->
+  <!-- ABOUT SECTION -->
   <section id="about">
-    <div class="reveal">
-      <div class="section-tag">About CAPIZDENTA</div>
-      <h2>Your Smile,<br>Our Purpose</h2>
-      <p class="section-intro">We believe your smile is more than a part of your face — it is a reflection of your confidence, joy, and personal story.</p>
-    </div>
+    <h2>About CAPIZDENTA</h2>
+    <p>
+      CAPIZDENTA provides high-quality dental care in Roxas City with a focus on
+      comfort, accessibility, and patient trust.
+    </p>
 
-    <div class="about-grid reveal">
-      <!-- LEFT: Image panel
-           PLACEHOLDER: Currently shows emoji + gradient.
-           TO REPLACE with a real photo:
-             1. Drop your image in: assets/images/clinic-interior.jpg
-             2. In css/styles.css, find .about-img-wrap
-             3. Add: background: url('../assets/images/clinic-interior.jpg') center/cover;
-             4. Remove the .about-img-icon div below -->
-      <div class="about-img-wrap">
-        <div class="about-img-icon">🦷</div>
-        <!-- Floating quote card pinned to bottom of image panel -->
-        <div class="about-img-card">
-          <div class="stars">★★★★★</div>
-          <strong>"Kind, gentle, and very approachable."</strong>
-          <span>— Verified Patient, Capiz</span>
-        </div>
-      </div>
-
-      <!-- RIGHT: Clinic description text -->
-      <div class="about-text">
-        <p>CAPIZDENTA is a trusted dental clinic in Roxas City, Capiz, offering high-quality and accessible dental care at reasonable rates for the Capiznon community and beyond.</p>
-        <p>Our clinic is designed with patient comfort in mind — a calm, clean, and faith-filled environment where you don't feel like just another patient. The ambiance is soothing and relaxing, especially important for those who feel nervous about dental visits.</p>
-        <p><em>"Prevention is better than cure — visit your dentist before it hurts."</em></p>
-
-        <!-- Four value pillars — edit text freely here -->
-        <div class="about-pillars">
-          <div class="pillar">
-            <div class="pillar-title">Expert Hands</div>
-            <p>Professional skill backed by training in general and specialized dentistry.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Compassionate Heart</div>
-            <p>Every patient is treated with kindness, patience, and genuine care.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Accessible Rates</div>
-            <p>Quality dental care at fair, reasonable prices for all Capiznons.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Faith-Filled Space</div>
-            <p>A clinic rooted in values of service, community, and well-being.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- LINK TO FULL PAGE -->
+    <a href="about.html" class="btn-outline">Learn More</a>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       SERVICES SECTION
-       CSS auto-fill grid of cards.
-       Each card lifts on hover (CSS transition).
-       Icon color variants: default=ocean blue,
-       .coral = orange-red, .gold = warm gold.
-       TO ADD A NEW SERVICE: copy any .service-card
-       block, update icon emoji, h3 title, and p text.
-  ══════════════════════════════════════════ -->
+  <!-- SERVICES -->
   <section id="services">
-    <div class="services-header reveal">
-      <div>
-        <div class="section-tag">What We Offer</div>
-        <h2>Our Dental Services</h2>
-      </div>
-      <p class="section-intro">Comprehensive care from routine checkups to full smile transformations.</p>
-    </div>
-
-    <div class="services-grid reveal">
-      <div class="service-card">
-        <div class="svc-icon">🩺</div>
-        <h3>General Dentistry</h3>
-        <p>Routine checkups, cleanings, fluoride treatments, and preventive care to keep your smile healthy long-term.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon coral">✨</div>
-        <h3>Cosmetic Dentistry</h3>
-        <p>Teeth whitening, veneers, and aesthetic enhancements that help your smile radiate confidence and beauty.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon gold">🦷</div>
-        <h3>Orthodontics</h3>
-        <p>Braces and alignment solutions to correct bite and positioning issues. Appointments recommended.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon">🔧</div>
-        <h3>Restorative Dentistry</h3>
-        <p>Fillings, crowns, bridges, and dentures designed to restore full function and natural-looking aesthetics.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon coral">🚨</div>
-        <h3>Emergency Dental Care</h3>
-        <p>Prompt care for toothaches, broken teeth, dental trauma, and other urgent dental needs.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon gold">📷</div>
-        <h3>Dental Radiology</h3>
-        <p>Digital X-rays and radiological imaging to accurately diagnose conditions not visible to the naked eye.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon">🧼</div>
-        <h3>Dental Hygiene</h3>
-        <p>Oral hygiene coaching, professional scaling, and polishing to maintain a clean and healthy mouth.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon coral">👶</div>
-        <h3>Pediatric Dentistry</h3>
-        <p>Gentle, child-friendly dental care in a welcoming environment that makes young patients feel safe.</p>
-      </div>
-    </div>
+    <h2>Our Services</h2>
+    <p>General, cosmetic, orthodontic, and restorative dentistry.</p>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       PHOTO GALLERY SECTION
-       6-tile masonry-style CSS grid.
-       Two tiles are .gi-large (spans 2 columns).
-
-       CURRENT STATE: Gradient color placeholders.
-
-       HOW TO REPLACE WITH REAL PHOTOS:
-         1. Save photos to: assets/images/
-            Suggested file names:
-              gallery-exterior.jpg   — clinic from outside
-              gallery-waiting.jpg    — reception / waiting area
-              gallery-chair.jpg      — dental chair / treatment room
-              gallery-team.jpg       — dentist and staff
-              gallery-hygiene.jpg    — equipment / sterilization
-              gallery-smiles.jpg     — patient results / smiles
-         2. On each .gallery-item below, replace the
-            inline style background with:
-            style="background-image: url('assets/images/FILENAME.jpg');
-                   background-size: cover; background-position: center;"
-         3. Update the aria-label text for accessibility.
-
-       The .gallery-overlay div contains the caption
-       that appears on hover. Edit <span> and <small>
-       to change the caption text.
-  ══════════════════════════════════════════ -->
-  <section id="gallery">
-    <div class="reveal">
-      <div class="section-tag">Inside CAPIZDENTA</div>
-      <h2>Clinic Gallery</h2>
-      <p class="section-intro">A glimpse into our clean, comfortable, and faith-filled clinic in Roxas City.</p>
-    </div>
-
-    <div class="gallery-grid reveal">
-      <!-- TILE 1 (large — spans 2 cols) — Clinic Exterior
-           TODO: Replace with:
-           style="background-image:url('assets/images/gallery-exterior.jpg');background-size:cover;" -->
-      <div class="gallery-item gi-large"
-           style="background:linear-gradient(135deg,#1a5f7a,#3a9ec2)"
-           aria-label="Clinic exterior">
-        <div class="gallery-overlay">
-          <span>📍 Clinic Exterior</span>
-          <small>Roxas City, Capiz</small>
-        </div>
-      </div>
-
-      <!-- TILE 2 — Waiting Area
-           TODO: style="background-image:url('assets/images/gallery-waiting.jpg');background-size:cover;" -->
-      <div class="gallery-item"
-           style="background:linear-gradient(135deg,#0d2b45,#1a5f7a)"
-           aria-label="Waiting and reception area">
-        <div class="gallery-overlay">
-          <span>🛋️ Waiting Area</span>
-          <small>Calm &amp; Comfortable</small>
-        </div>
-      </div>
-
-      <!-- TILE 3 — Treatment Room
-           TODO: style="background-image:url('assets/images/gallery-chair.jpg');background-size:cover;" -->
-      <div class="gallery-item"
-           style="background:linear-gradient(135deg,#c8a96e,#e8c47a)"
-           aria-label="Dental treatment room">
-        <div class="gallery-overlay">
-          <span>🦷 Treatment Room</span>
-          <small>Modern Equipment</small>
-        </div>
-      </div>
-
-      <!-- TILE 4 — Our Team
-           TODO: style="background-image:url('assets/images/gallery-team.jpg');background-size:cover;" -->
-      <div class="gallery-item"
-           style="background:linear-gradient(135deg,#e8734a,#f0a07a)"
-           aria-label="Our dental team">
-        <div class="gallery-overlay">
-          <span>👩‍⚕️ Our Team</span>
-          <small>Expert &amp; Caring</small>
-        </div>
-      </div>
-
-      <!-- TILE 5 — Hygiene Standards
-           TODO: style="background-image:url('assets/images/gallery-hygiene.jpg');background-size:cover;" -->
-      <div class="gallery-item"
-           style="background:linear-gradient(135deg,#2d6a4f,#52b788)"
-           aria-label="Sterilization and hygiene">
-        <div class="gallery-overlay">
-          <span>🧼 Hygiene Standards</span>
-          <small>Sterile &amp; Safe</small>
-        </div>
-      </div>
-
-      <!-- TILE 6 (large — spans 2 cols) — Patient Smiles
-           TODO: style="background-image:url('assets/images/gallery-smiles.jpg');background-size:cover;" -->
-      <div class="gallery-item gi-large"
-           style="background:linear-gradient(135deg,#4a4e69,#9a8c98)"
-           aria-label="Happy patient smiles">
-        <div class="gallery-overlay">
-          <span>😁 Happy Smiles</span>
-          <small>Our Best Work</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Link to Facebook for full photo album -->
-    <div class="gallery-footer reveal">
-      <p>See more photos of our clinic on our Facebook page.</p>
-      <a href="https://www.facebook.com/profile.php?id=100083309584253"
-         target="_blank" class="btn-outline-dark">
-        📘 View More on Facebook
-      </a>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
-       SCHEDULE & BOOKING SECTION
-       Background: navy dark (overrides default cream).
-
-       LEFT COLUMN: clinic hours table + phone links
-       RIGHT COLUMN: appointment request form
-
-       ── BOOKING SLOT LIMIT ──
-       Max 50 appointments per day (configurable in
-       js/main.js under MAX_BOOKINGS_PER_DAY).
-       Count stored in localStorage per date key.
-       Live counter updates when date is changed.
-       Submission blocked when limit reached.
-
-       ── EMAIL NOTIFICATION (EmailJS) ──
-       When patient checks "Email Confirmation" and
-       provides their email, EmailJS sends:
-         • A confirmation email to the patient
-         • A notification email to the clinic
-       Configure service/template IDs in main.js.
-
-       ── SMS NOTIFICATION (PREMIUM / LOCKED) ──
-       SMS checkbox is visible but disabled.
-       Styled with strikethrough + PREMIUM badge.
-       To activate in the future, see comments
-       inside the SMS block and in js/main.js.
-  ══════════════════════════════════════════ -->
-  <section id="schedule">
-    <div class="reveal">
-      <div class="section-tag">Visit Us</div>
-      <h2>Clinic Hours &amp; Booking</h2>
-      <p class="section-intro">Walk-ins are welcome. Appointments are recommended for orthodontics and restorations.</p>
-    </div>
-
-    <div class="schedule-grid reveal">
-
-      <!-- ── LEFT: Clinic hours table ── -->
-      <div>
-        <!-- Hours table — today's row gets .today-row class from JS -->
-        <!-- To change hours: edit the text in the second <td> of each row -->
-        <table class="hours-table">
-          <tr id="row-mon"><td>Monday</td>    <td>9:00 AM – 6:00 PM</td></tr>
-          <tr>             <td>Tuesday</td>   <td class="closed-tag">Closed</td></tr>
-          <tr id="row-wed"><td>Wednesday</td> <td>9:00 AM – 6:00 PM</td></tr>
-          <tr id="row-thu"><td>Thursday</td>  <td>9:00 AM – 6:00 PM</td></tr>
-          <tr id="row-fri"><td>Friday</td>    <td>9:00 AM – 6:00 PM</td></tr>
-          <tr id="row-sat"><td>Saturday</td>  <td>9:00 AM – 6:00 PM</td></tr>
-          <tr id="row-sun"><td>Sunday</td>    <td>9:00 AM – 6:00 PM</td></tr>
-        </table>
-        <p class="hours-note">※ Today's row is highlighted. Hours may vary on holidays.</p>
-
-        <!-- Direct contact links below hours table -->
-        <div class="contact-links">
-          <a href="tel:+639544055391">📞 0954 405 5391</a>
-          <a href="tel:+639064353619">📞 0906 435 3619</a>
-          <a href="tel:+639338509267">📞 0933 850 9267</a>
-          <a href="mailto:dental.talks@yahoo.com" class="email-link">✉️ dental.talks@yahoo.com</a>
-        </div>
-      </div>
-
-      <!-- ── RIGHT: Appointment booking form ── -->
-      <div class="booking-card">
-        <h3>Request an Appointment</h3>
-        <p>Fill out the form and our team will confirm your schedule via phone or email.</p>
-
-        <!-- Slots remaining banner
-             Populated by updateSlotsDisplay() in main.js
-             when the date field changes.
-             Color changes to red when slots are low or full. -->
-        <div class="slots-banner" id="slotsBanner">
-          <span id="slotsText">📅 Select a date to see available slots</span>
-        </div>
-
-        <!-- ══ BOOKING FORM ══
-             Field IDs are used by main.js — don't rename
-             without updating main.js to match. -->
-        <div id="bookingForm">
-
-          <!-- Row 1: Full Name + Phone -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-name">Full Name</label>
-              <input type="text" id="f-name" placeholder="Juan dela Cruz" />
-            </div>
-            <div class="form-group">
-              <label for="f-phone">Contact Number</label>
-              <input type="tel" id="f-phone" placeholder="09XX XXX XXXX" />
-            </div>
-          </div>
-
-          <!-- Email — used for EmailJS confirmation -->
-          <div class="form-group">
-            <label for="f-email">
-              Email Address
-              <span class="label-note">(confirmation sent here)</span>
-            </label>
-            <input type="email" id="f-email" placeholder="your@email.com" />
-          </div>
-
-          <!-- Row 2: Date + Time
-               Date input onchange triggers updateSlotsDisplay()
-               to show how many slots remain for that day. -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-date">Preferred Date</label>
-              <input type="date" id="f-date" onchange="updateSlotsDisplay()" />
-            </div>
-            <div class="form-group">
-              <label for="f-time">Preferred Time</label>
-              <select id="f-time">
-                <option value="">Select time</option>
-                <option>9:00 AM</option>
-                <option>10:00 AM</option>
-                <option>11:00 AM</option>
-                <option>1:00 PM</option>
-                <option>2:00 PM</option>
-                <option>3:00 PM</option>
-                <option>4:00 PM</option>
-                <option>5:00 PM</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Service selection dropdown -->
-          <div class="form-group">
-            <label for="f-service">Service Needed</label>
-            <select id="f-service">
-              <option value="">Select a service</option>
-              <option>General Checkup / Cleaning</option>
-              <option>Cosmetic Dentistry</option>
-              <option>Orthodontics / Braces</option>
-              <option>Restorative (Filling / Crown / Denture)</option>
-              <option>Emergency Dental Care</option>
-              <option>Dental Radiology / X-Ray</option>
-              <option>Pediatric Dentistry</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <!-- Additional notes / patient concern -->
-          <div class="form-group">
-            <label for="f-notes">Additional Notes</label>
-            <textarea id="f-notes" rows="3"
-              placeholder="Describe your concern or request..."></textarea>
-          </div>
-
-          <!-- ── NOTIFICATION OPTIONS ── -->
-          <div class="notify-row">
-
-            <!-- EMAIL NOTIFICATION (active)
-                 Checked by default. If patient provides email,
-                 EmailJS sends a confirmation email on submit.
-                 Uncheck to skip. -->
-            <div class="notify-option email-notify">
-              <label class="notify-label">
-                <input type="checkbox" id="notify-email" checked />
-                <span class="notify-icon">✉️</span>
-                <span class="notify-text">
-                  <strong>Email Confirmation</strong>
-                  <small>Receive booking details by email</small>
-                </span>
-              </label>
-            </div>
-
-            <!-- SMS NOTIFICATION — PREMIUM (disabled / locked)
-                 This block is intentionally greyed out and crossed.
-                 It signals to users that SMS is a future feature.
-
-                 TO UNLOCK IN THE FUTURE:
-                   1. Remove class "premium-locked" from .sms-notify
-                   2. Remove the disabled attribute from the checkbox
-                   3. Remove the .premium-badge <span>
-                   4. Remove text-decoration:line-through from CSS
-                      (search for .premium-locked in styles.css)
-                   5. In js/main.js, find the SMS NOTIFICATION section
-                      and add your Semaphore / Twilio API call there
-                   6. Add your SMS API key to js/main.js -->
-            <div class="notify-option sms-notify premium-locked"
-                 title="SMS notifications are available in the premium plan">
-              <label class="notify-label">
-                <input type="checkbox" id="notify-sms" disabled />
-                <span class="notify-icon">📱</span>
-                <span class="notify-text">
-                  <strong>
-                    SMS Confirmation
-                    <span class="premium-badge">PREMIUM</span>
-                  </strong>
-                  <small>Receive booking details by text message</small>
-                </span>
-              </label>
-            </div>
-
-          </div><!-- end .notify-row -->
-
-          <!-- Submit button — calls submitBooking() in main.js -->
-          <button class="btn-submit" id="submitBtn" onclick="submitBooking()">
-            Submit Appointment Request
-          </button>
-
-          <!-- Success message — hidden by default.
-               Shown by JS after successful submission.
-               Hides the button and shows this instead. -->
-          <div class="form-success" id="formSuccess" style="display:none;">
-            ✅ <strong>Request submitted!</strong>
-            We'll contact you to confirm your appointment.
-          </div>
-
-        </div><!-- end #bookingForm -->
-      </div><!-- end .booking-card -->
-
-    </div><!-- end .schedule-grid -->
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
-       REVIEWS SECTION
-       Two parts:
-         1. Static featured review cards (always visible)
-         2. Live Elfsight Google Reviews widget
-
-       ELFSIGHT WIDGET:
-         Widget ID: 7a1c9e57-20a3-467a-83fa-08ae3fde15eb
-         Loaded via platform.js in <head>.
-         Lazy-loaded (data-elfsight-app-lazy) so it
-         only fetches when scrolled into view.
-         To update widget appearance/settings:
-           Log in to elfsight.com and edit there.
-           Changes reflect on the site automatically.
-         Requires internet connection to load.
-  ══════════════════════════════════════════ -->
-  <section id="reviews">
-    <div class="reveal">
-      <div class="section-tag">Patient Reviews</div>
-      <h2>What Our Patients Say</h2>
-      <p class="section-intro">Real reviews from real patients in Roxas City and across Capiz.</p>
-    </div>
-
-    <!-- Static review cards (no internet needed, always visible) -->
-    <div class="testimonials-grid reveal">
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Very good experience at Capiz Dental. The staff are friendly and professional, and the place is clean and comfortable. Special thanks to Miss M for being kind, gentle, and very approachable.</p>
-        <div class="testi-author">Verified Patient</div>
-        <div class="testi-loc">⭐⭐⭐⭐⭐ · Capiz</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">What I like the most is that they are very accommodating. All questions and concerns are answered thoroughly. The ambience is very soothing, well-maintained, and relaxing.</p>
-        <div class="testi-author">Verified Patient</div>
-        <div class="testi-loc">⭐⭐⭐⭐⭐ · Roxas City</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <p class="testi-text">The clinic ambiance is calm, clean, and faith-filled. You don't feel like just another patient. I always leave feeling heard, cared for, and with a brighter smile.</p>
-        <div class="testi-author">Grace T.</div>
-        <div class="testi-loc">⭐⭐⭐⭐⭐ · Capiz</div>
-      </div>
-    </div>
-
-    <!-- ELFSIGHT LIVE GOOGLE REVIEWS WIDGET
-         This div is replaced by the Elfsight widget script.
-         If it appears blank, check your internet connection
-         or log in to elfsight.com to verify the widget is active. -->
-    <div class="elfsight-wrap reveal">
-      <p class="elfsight-label">— Live from Google Reviews —</p>
-      <div class="elfsight-app-7a1c9e57-20a3-467a-83fa-08ae3fde15eb"
-           data-elfsight-app-lazy>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
-       FAQ SECTION
-       Accordion pattern — one item open at a time.
-       toggleFaq() in main.js handles open/close.
-       TO ADD A NEW QUESTION:
-         Copy a .faq-item block, update the
-         button text and the .faq-a paragraph.
-  ══════════════════════════════════════════ -->
-  <section id="faq">
-    <div class="reveal">
-      <div class="section-tag">FAQs</div>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do I need an appointment? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>Walk-ins are welcome for general consultations and cleanings. Appointments are strongly recommended for orthodontic treatments, restorations, and dental radiology.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How many appointments are available per day? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>We accept up to 50 online appointment requests per day. Once the limit is reached for a date, please choose a different day or contact us directly by phone. Walk-in availability is handled separately at the clinic.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Will I receive a booking confirmation? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>Yes — if you provide your email address, an automatic confirmation email will be sent to you. Our team will also follow up by phone or message to confirm your schedule.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What are your payment options? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>We accept cash payments. Contact us via phone or Facebook for installment options on longer treatment plans.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Is the clinic wheelchair accessible? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>Yes — CAPIZDENTA has a wheelchair accessible restroom to ensure all patients can visit comfortably.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do you treat children? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>Absolutely. Our team is experienced with pediatric dental care and ensures a gentle, friendly experience for children of all ages.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How do I reach you for emergencies? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>Call us directly: 0954 405 5391 / 0906 435 3619 / 0933 850 9267. You can also message us on Facebook for quick responses.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How often should I visit the dentist? <span class="icon">+</span>
-        </button>
-        <div class="faq-a"><p>Every 6 months is recommended. "Prevention is better than cure — visit your dentist before it hurts." Early visits save time, worry, and expense.</p></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
-       CONTACT SECTION
-       Two-column layout:
-         Left:  Contact info cards (always visible)
-         Right: Map placeholder
-
-       TO EMBED A LIVE GOOGLE MAP:
-         Replace the .map-placeholder div with:
-         <iframe
-           src="YOUR_GOOGLE_MAPS_EMBED_URL"
-           width="100%" height="380"
-           style="border:0;border-radius:20px;"
-           allowfullscreen loading="lazy">
-         </iframe>
-         Get embed URL: Google Maps > Share > Embed a map
-  ══════════════════════════════════════════ -->
+  <!-- CONTACT -->
   <section id="contact">
-    <div class="reveal">
-      <div class="section-tag">Find Us</div>
-      <h2>Get In Touch</h2>
-      <p class="section-intro">We'd love to hear from you. Visit us in Roxas City or reach out below.</p>
-    </div>
-
-    <div class="contact-grid reveal">
-      <!-- Contact info cards — update info here if it changes -->
-      <div class="contact-info-cards">
-        <div class="cinfo-card">
-          <div class="cinfo-icon">📍</div>
-          <div>
-            <div class="cinfo-label">Location</div>
-            <div class="cinfo-val">Roxas City, Capiz<br>Philippines 5800</div>
-          </div>
-        </div>
-        <div class="cinfo-card">
-          <div class="cinfo-icon">📞</div>
-          <div>
-            <div class="cinfo-label">Phone</div>
-            <div class="cinfo-val">
-              <a href="tel:+639544055391">0954 405 5391</a><br>
-              <a href="tel:+639064353619">0906 435 3619</a><br>
-              <a href="tel:+639338509267">0933 850 9267</a>
-            </div>
-          </div>
-        </div>
-        <div class="cinfo-card">
-          <div class="cinfo-icon">✉️</div>
-          <div>
-            <div class="cinfo-label">Email</div>
-            <div class="cinfo-val">
-              <a href="mailto:dental.talks@yahoo.com">dental.talks@yahoo.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="cinfo-card">
-          <div class="cinfo-icon">📘</div>
-          <div>
-            <div class="cinfo-label">Facebook</div>
-            <div class="cinfo-val">
-              <a href="https://www.facebook.com/profile.php?id=100083309584253"
-                 target="_blank">CAPIZDENTA on Facebook</a>
-            </div>
-          </div>
-        </div>
-        <div class="cinfo-card">
-          <div class="cinfo-icon">🕘</div>
-          <div>
-            <div class="cinfo-label">Hours</div>
-            <div class="cinfo-val">
-              Mon, Wed–Sun: 9:00 AM – 6:00 PM<br>
-              <span class="closed-inline">Tuesday: Closed</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Map placeholder — replace with <iframe> when ready -->
-      <div class="map-placeholder">
-        <div class="map-emoji">🗺️</div>
-        <h3 class="map-title">CAPIZDENTA</h3>
-        <p>Roxas City, Capiz, Philippines</p>
-        <p class="map-note">Check our Facebook page for exact directions and map pin.</p>
-        <a href="https://maps.app.goo.gl/qbGk37Xyy9yruc2S6" target="_blank">
-          Open in Google Maps
-        </a>
-      </div>
-    </div>
+    <h2>Contact</h2>
+    <p>Roxas City, Capiz, Philippines</p>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       FOOTER
-       4-column grid: Brand | Services | Clinic | Contact
-       Responsive: 2-col on tablet, 1-col on mobile.
-       Update the copyright year manually each year.
-  ══════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-grid">
-      <!-- Column 1: Brand, tagline, social icons -->
-      <div class="footer-brand">
-        <a class="nav-logo footer-logo" href="#hero">CAPIZ<span>DENTA</span></a>
-        <p>Where beauty and smiles are created — not just maintained. Serving Roxas City and all of Capiz.</p>
-        <div class="footer-socials">
-          <!-- Social icon buttons — update href if handles change -->
-          <a class="social-btn"
-             href="https://www.facebook.com/profile.php?id=100083309584253"
-             target="_blank" title="Facebook">📘</a>
-          <a class="social-btn" href="tel:+639544055391" title="Call us">📞</a>
-          <a class="social-btn" href="mailto:dental.talks@yahoo.com" title="Email">✉️</a>
-        </div>
-      </div>
-
-      <!-- Column 2: Services links -->
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">General Dentistry</a></li>
-          <li><a href="#services">Cosmetic Dentistry</a></li>
-          <li><a href="#services">Orthodontics</a></li>
-          <li><a href="#services">Restorative</a></li>
-          <li><a href="#services">Emergency Care</a></li>
-          <li><a href="#services">Dental Radiology</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Clinic page links -->
-      <div class="footer-col">
-        <h4>Clinic</h4>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#reviews">Patient Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#schedule">Hours &amp; Booking</a></li>
-          <li><a href="#contact">Find Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Contact details -->
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+639544055391">0954 405 5391</a></li>
-          <li><a href="tel:+639064353619">0906 435 3619</a></li>
-          <li><a href="mailto:dental.talks@yahoo.com">dental.talks@yahoo.com</a></li>
-          <li><a href="https://maps.app.goo.gl/qbGk37Xyy9yruc2S6" target="_blank">Roxas City, Capiz</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Footer bottom bar — copyright + brand quote -->
-    <div class="footer-bottom">
-      <span>© 2025 CAPIZDENTA. All rights reserved. Roxas City, Capiz, Philippines.</span>
-      <span class="footer-quote">"Don't let the world change your smile — use your smile to change the world."</span>
-    </div>
+    <p>© 2025 CAPIZDENTA</p>
   </footer>
 
-
-  <!-- ══════════════════════════════════════════
-       UTILITY / FLOATING ELEMENTS
-  ══════════════════════════════════════════ -->
-
-  <!-- Toast notification — floats above everything.
-       Shown by showToast() in main.js after form submit.
-       Auto-hides after 4 seconds. -->
-  <div id="toast">✅ Appointment request submitted! We'll contact you shortly.</div>
-
-  <!-- Back-to-top button — fixed bottom-right corner.
-       Appears after scrolling 400px (controlled by JS).
-       Smooth scrolls to top on click. -->
-  <button id="btt" title="Back to top">↑</button>
-
-  <!-- Main JavaScript — loaded last so DOM is ready -->
-  <script src="js/main.js"></script>
+  <!-- ✅ FIXED JS PATH -->
+  <script src="main.js"></script>
 
 </body>
 </html>
