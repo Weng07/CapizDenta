@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAPIZDENTA – Dental Clinic | Roxas City, Capiz</title>
+  <title>CAPIZDENTA - Dental Clinic | Roxas City, Capiz</title>
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- ELFSIGHT SCRIPT -->
+  <!-- ELFSIGHT PLATFORM SCRIPT -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
 
-  <!-- EMAILJS -->
+  <!-- EMAILJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- ✅ FIXED CSS PATH -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION BAR -->
   <nav id="navbar">
     <a href="#hero" class="nav-logo">CAPIZ<span>DENTA</span></a>
 
     <ul class="nav-links">
-      <!-- ✅ FIXED ABOUT LINK -->
       <li><a href="about.html">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -36,75 +34,565 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <button class="nav-cta" onclick="scrollToSection('#schedule')">
-      Book Appointment
-    </button>
+    <button class="nav-cta" onclick="scrollToSection('#schedule')">Book Appointment</button>
 
-    <button class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE DROPDOWN MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#schedule">Hours & Booking</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
+    <a href="#schedule" onclick="closeMobile()">Hours &amp; Booking</a>
+    <a href="#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section id="hero">
+    <div class="hero-bg-arc"></div>
+
     <div class="hero-content">
       <div class="hero-badge">Roxas City, Capiz · Philippines</div>
 
-      <h1>Beauty & Smiles<br><em>are Created</em></h1>
+      <h1>Beauty &amp; Smiles<br><em>are Created</em></h1>
 
       <p class="hero-sub">
         Personalized dental care combining professional skill with heartfelt service.
+        General, cosmetic, orthodontic &amp; restorative dentistry - all in one welcoming clinic.
       </p>
 
       <div class="hero-btns">
-        <a href="#schedule" class="btn-primary">Book Appointment</a>
+        <a href="#schedule" class="btn-primary">Book an Appointment</a>
         <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">5.0★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div>
+          <div class="stat-num">120+</div>
+          <div class="stat-label">Happy Patients</div>
+        </div>
+        <div>
+          <div class="stat-num">6</div>
+          <div class="stat-label">Days a Week</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT SECTION -->
   <section id="about">
-    <h2>About CAPIZDENTA</h2>
-    <p>
-      CAPIZDENTA provides high-quality dental care in Roxas City with a focus on
-      comfort, accessibility, and patient trust.
-    </p>
+    <div class="reveal">
+      <div class="section-tag">About CAPIZDENTA</div>
+      <h2>Your Smile,<br>Our Purpose</h2>
+      <p class="section-intro">
+        We believe your smile is more than a part of your face. It is a reflection of your confidence, joy, and personal story.
+      </p>
+    </div>
 
-    <!-- LINK TO FULL PAGE -->
-    <a href="about.html" class="btn-outline">Learn More</a>
+    <div class="about-grid reveal">
+      <div class="about-img-wrap">
+        <div class="about-img-icon">🦷</div>
+        <div class="about-img-card">
+          <div class="stars">★★★★★</div>
+          <strong>"Kind, gentle, and very approachable."</strong>
+          <span>- Verified Patient, Capiz</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <p>CAPIZDENTA is a trusted dental clinic in Roxas City, Capiz, offering high-quality and accessible dental care at reasonable rates for the Capiznon community and beyond.</p>
+        <p>Our clinic is designed with patient comfort in mind: a calm, clean, and faith-filled environment where you do not feel like just another patient. The ambiance is soothing and relaxing, especially important for those who feel nervous about dental visits.</p>
+        <p><em>"Prevention is better than cure - visit your dentist before it hurts."</em></p>
+
+        <a href="about.html" class="btn-outline-dark">Learn More About Us</a>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-title">Expert Hands</div>
+            <p>Professional skill backed by training in general and specialized dentistry.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Compassionate Heart</div>
+            <p>Every patient is treated with kindness, patience, and genuine care.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Accessible Rates</div>
+            <p>Quality dental care at fair, reasonable prices for all Capiznons.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Faith-Filled Space</div>
+            <p>A clinic rooted in values of service, community, and well-being.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- SERVICES SECTION -->
   <section id="services">
-    <h2>Our Services</h2>
-    <p>General, cosmetic, orthodontic, and restorative dentistry.</p>
+    <div class="services-header reveal">
+      <div>
+        <div class="section-tag">What We Offer</div>
+        <h2>Our Dental Services</h2>
+      </div>
+      <p class="section-intro">Comprehensive care from routine checkups to full smile transformations.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="svc-icon">🩺</div>
+        <h3>General Dentistry</h3>
+        <p>Routine checkups, cleanings, fluoride treatments, and preventive care to keep your smile healthy long-term.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon coral">✨</div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Teeth whitening, veneers, and aesthetic enhancements that help your smile radiate confidence and beauty.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon gold">🦷</div>
+        <h3>Orthodontics</h3>
+        <p>Braces and alignment solutions to correct bite and positioning issues. Appointments recommended.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🔧</div>
+        <h3>Restorative Dentistry</h3>
+        <p>Fillings, crowns, bridges, and dentures designed to restore full function and natural-looking aesthetics.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon coral">🚨</div>
+        <h3>Emergency Dental Care</h3>
+        <p>Prompt care for toothaches, broken teeth, dental trauma, and other urgent dental needs.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon gold">📷</div>
+        <h3>Dental Radiology</h3>
+        <p>Digital X-rays and radiological imaging to accurately diagnose conditions not visible to the naked eye.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🧼</div>
+        <h3>Dental Hygiene</h3>
+        <p>Oral hygiene coaching, professional scaling, and polishing to maintain a clean and healthy mouth.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon coral">👶</div>
+        <h3>Pediatric Dentistry</h3>
+        <p>Gentle, child-friendly dental care in a welcoming environment that makes young patients feel safe.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- PREMIUM CLINIC GALLERY SECTION -->
+    <section id="gallery">
+    <div class="gallery-heading reveal">
+        <div class="section-tag">Inside CAPIZDENTA</div>
+        <h2>A Calm, Clean Space<br>for Confident Smiles</h2>
+        <p class="section-intro">
+        Explore the clinic environment, treatment areas, and patient-focused spaces designed for comfort and care.
+        </p>
+    </div>
+
+    <div class="premium-gallery reveal">
+        <!-- FEATURE IMAGE -->
+        <div class="gallery-card gallery-feature"
+            style="background-image:url('images/gallery-exterior.jpg');">
+        <div class="gallery-shade"></div>
+        <div class="gallery-caption">
+            <span>Clinic Exterior</span>
+            <small>Easy to find in Roxas City, Capiz</small>
+        </div>
+        </div>
+
+        <!-- SMALL IMAGE -->
+        <div class="gallery-card"
+            style="background-image:url('images/gallery-waiting.jpg');">
+        <div class="gallery-shade"></div>
+        <div class="gallery-caption">
+            <span>Waiting Area</span>
+            <small>Comfortable and calming</small>
+        </div>
+        </div>
+
+        <!-- SMALL IMAGE -->
+        <div class="gallery-card"
+            style="background-image:url('images/gallery-chair.jpg');">
+        <div class="gallery-shade"></div>
+        <div class="gallery-caption">
+            <span>Treatment Room</span>
+            <small>Prepared for focused care</small>
+        </div>
+        </div>
+
+        <!-- TALL IMAGE -->
+        <div class="gallery-card gallery-tall"
+            style="background-image:url('images/gallery-team.jpg');">
+        <div class="gallery-shade"></div>
+        <div class="gallery-caption">
+            <span>Dental Team</span>
+            <small>Professional and approachable</small>
+        </div>
+        </div>
+
+        <!-- WIDE IMAGE -->
+        <div class="gallery-card gallery-wide"
+            style="background-image:url('images/gallery-hygiene.jpg');">
+        <div class="gallery-shade"></div>
+        <div class="gallery-caption">
+            <span>Hygiene Standards</span>
+            <small>Clean, organized, and patient-ready</small>
+        </div>
+        </div>
+
+        <!-- SMALL IMAGE -->
+        <div class="gallery-card"
+            style="background-image:url('images/gallery-smiles.jpg');">
+        <div class="gallery-shade"></div>
+        <div class="gallery-caption">
+            <span>Patient Smiles</span>
+            <small>Care that supports confidence</small>
+        </div>
+        </div>
+    </div>
+
+    <div class="gallery-footer reveal">
+        <p>More clinic photos and updates are available on our Facebook page.</p>
+        <a href="https://www.facebook.com/profile.php?id=100083309584253"
+        target="_blank"
+        class="btn-outline-dark">
+        View More on Facebook
+        </a>
+    </div>
+  </section>
+  <!-- SCHEDULE AND BOOKING SECTION -->
+  <section id="schedule">
+    <div class="reveal">
+      <div class="section-tag">Visit Us</div>
+      <h2>Clinic Hours &amp; Booking</h2>
+      <p class="section-intro">Walk-ins are welcome. Appointments are recommended for orthodontics and restorations.</p>
+    </div>
+
+    <div class="schedule-grid reveal">
+      <div>
+        <table class="hours-table">
+          <tr id="row-mon"><td>Monday</td><td>9:00 AM - 6:00 PM</td></tr>
+          <tr><td>Tuesday</td><td class="closed-tag">Closed</td></tr>
+          <tr id="row-wed"><td>Wednesday</td><td>9:00 AM - 6:00 PM</td></tr>
+          <tr id="row-thu"><td>Thursday</td><td>9:00 AM - 6:00 PM</td></tr>
+          <tr id="row-fri"><td>Friday</td><td>9:00 AM - 6:00 PM</td></tr>
+          <tr id="row-sat"><td>Saturday</td><td>9:00 AM - 6:00 PM</td></tr>
+          <tr id="row-sun"><td>Sunday</td><td>9:00 AM - 6:00 PM</td></tr>
+        </table>
+        <p class="hours-note">※ Today's row is highlighted. Hours may vary on holidays.</p>
+
+        <div class="contact-links">
+          <a href="tel:+639544055391">📞 0954 405 5391</a>
+          <a href="tel:+639064353619">📞 0906 435 3619</a>
+          <a href="tel:+639338509267">📞 0933 850 9267</a>
+          <a href="mailto:dental.talks@yahoo.com" class="email-link">✉️ dental.talks@yahoo.com</a>
+        </div>
+      </div>
+
+      <div class="booking-card">
+        <h3>Request an Appointment</h3>
+        <p>Fill out the form and our team will confirm your schedule via phone or email.</p>
+
+        <div class="slots-banner" id="slotsBanner">
+          <span id="slotsText">📅 Select a date to see available slots</span>
+        </div>
+
+        <div id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Full Name</label>
+              <input type="text" id="f-name" placeholder="Juan dela Cruz">
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Contact Number</label>
+              <input type="tel" id="f-phone" placeholder="09XX XXX XXXX">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-email">
+              Email Address
+              <span class="label-note">(confirmation sent here)</span>
+            </label>
+            <input type="email" id="f-email" placeholder="your@email.com">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-date">Preferred Date</label>
+              <input type="date" id="f-date" onchange="updateSlotsDisplay()">
+            </div>
+            <div class="form-group">
+              <label for="f-time">Preferred Time</label>
+              <select id="f-time">
+                <option value="">Select time</option>
+                <option>9:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+                <option>5:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-service">Service Needed</label>
+            <select id="f-service">
+              <option value="">Select a service</option>
+              <option>General Checkup / Cleaning</option>
+              <option>Cosmetic Dentistry</option>
+              <option>Orthodontics / Braces</option>
+              <option>Restorative (Filling / Crown / Denture)</option>
+              <option>Emergency Dental Care</option>
+              <option>Dental Radiology / X-Ray</option>
+              <option>Pediatric Dentistry</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="f-notes">Additional Notes</label>
+            <textarea id="f-notes" rows="3" placeholder="Describe your concern or request..."></textarea>
+          </div>
+
+          <button class="btn-submit" id="submitBtn" onclick="submitBooking()">
+            Submit Appointment Request
+          </button>
+
+          <div class="form-success" id="formSuccess" style="display:none;">
+            ✅ <strong>Request submitted!</strong>
+            We'll contact you to confirm your appointment.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews">
+    <div class="reveal">
+      <div class="section-tag">Patient Reviews</div>
+      <h2>What Our Patients Say</h2>
+      <p class="section-intro">Real reviews from real patients in Roxas City and across Capiz.</p>
+    </div>
+
+    <div class="testimonials-grid reveal">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Very good experience at Capiz Dental. The staff are friendly and professional, and the place is clean and comfortable. Special thanks to Miss M for being kind, gentle, and very approachable.</p>
+        <div class="testi-author">Verified Patient</div>
+        <div class="testi-loc">⭐⭐⭐⭐⭐ · Capiz</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">What I like the most is that they are very accommodating. All questions and concerns are answered thoroughly. The ambience is very soothing, well-maintained, and relaxing.</p>
+        <div class="testi-author">Verified Patient</div>
+        <div class="testi-loc">⭐⭐⭐⭐⭐ · Roxas City</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The clinic ambiance is calm, clean, and faith-filled. You don't feel like just another patient. I always leave feeling heard, cared for, and with a brighter smile.</p>
+        <div class="testi-author">Grace T.</div>
+        <div class="testi-loc">⭐⭐⭐⭐⭐ · Capiz</div>
+      </div>
+    </div>
+
+    <div class="elfsight-wrap reveal">
+      <p class="elfsight-label">Live from Google Reviews</p>
+      <div class="elfsight-app-7a1c9e57-20a3-467a-83fa-08ae3fde15eb" data-elfsight-app-lazy></div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq">
+    <div class="reveal">
+      <div class="section-tag">FAQs</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need an appointment? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Walk-ins are welcome for general consultations and cleanings. Appointments are strongly recommended for orthodontic treatments, restorations, and dental radiology.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How many appointments are available per day? <span class="icon">+</span></button>
+        <div class="faq-a"><p>We accept up to 50 online appointment requests per day. Once the limit is reached for a date, please choose a different day or contact us directly by phone.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will I receive a booking confirmation? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Yes. If you provide your email address, an automatic confirmation email will be sent to you. Our team will also follow up by phone or message.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What are your payment options? <span class="icon">+</span></button>
+        <div class="faq-a"><p>We accept cash payments. Contact us via phone or Facebook for installment options on longer treatment plans.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the clinic wheelchair accessible? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Yes. CAPIZDENTA has a wheelchair accessible restroom to ensure all patients can visit comfortably.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you treat children? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Absolutely. Our team is experienced with pediatric dental care and ensures a gentle, friendly experience for children of all ages.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I reach you for emergencies? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Call us directly: 0954 405 5391 / 0906 435 3619 / 0933 850 9267. You can also message us on Facebook for quick responses.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How often should I visit the dentist? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Every 6 months is recommended. Prevention is better than cure, so visit your dentist before it hurts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Roxas City, Capiz, Philippines</p>
+    <div class="reveal">
+      <div class="section-tag">Find Us</div>
+      <h2>Get In Touch</h2>
+      <p class="section-intro">We'd love to hear from you. Visit us in Roxas City or reach out below.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info-cards">
+        <div class="cinfo-card">
+          <div class="cinfo-icon">📍</div>
+          <div>
+            <div class="cinfo-label">Location</div>
+            <div class="cinfo-val">Roxas City, Capiz<br>Philippines 5800</div>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">📞</div>
+          <div>
+            <div class="cinfo-label">Phone</div>
+            <div class="cinfo-val">
+              <a href="tel:+639544055391">0954 405 5391</a><br>
+              <a href="tel:+639064353619">0906 435 3619</a><br>
+              <a href="tel:+639338509267">0933 850 9267</a>
+            </div>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">✉️</div>
+          <div>
+            <div class="cinfo-label">Email</div>
+            <div class="cinfo-val">
+              <a href="mailto:dental.talks@yahoo.com">dental.talks@yahoo.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">📘</div>
+          <div>
+            <div class="cinfo-label">Facebook</div>
+            <div class="cinfo-val">
+              <a href="https://www.facebook.com/profile.php?id=100083309584253" target="_blank">CAPIZDENTA on Facebook</a>
+            </div>
+          </div>
+        </div>
+        <div class="cinfo-card">
+          <div class="cinfo-icon">🕘</div>
+          <div>
+            <div class="cinfo-label">Hours</div>
+            <div class="cinfo-val">
+              Mon, Wed-Sun: 9:00 AM - 6:00 PM<br>
+              <span class="closed-inline">Tuesday: Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-placeholder">
+        <div class="map-emoji">🗺️</div>
+        <h3 class="map-title">CAPIZDENTA</h3>
+        <p>Roxas City, Capiz, Philippines</p>
+        <p class="map-note">Check our Facebook page for exact directions and map pin.</p>
+        <a href="https://maps.app.goo.gl/qbGk37Xyy9yruc2S6" target="_blank">Open in Google Maps</a>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 CAPIZDENTA</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo footer-logo" href="#hero">CAPIZ<span>DENTA</span></a>
+        <p>Where beauty and smiles are created, not just maintained. Serving Roxas City and all of Capiz.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="https://www.facebook.com/profile.php?id=100083309584253" target="_blank" title="Facebook">📘</a>
+          <a class="social-btn" href="tel:+639544055391" title="Call us">📞</a>
+          <a class="social-btn" href="mailto:dental.talks@yahoo.com" title="Email">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">General Dentistry</a></li>
+          <li><a href="#services">Cosmetic Dentistry</a></li>
+          <li><a href="#services">Orthodontics</a></li>
+          <li><a href="#services">Restorative</a></li>
+          <li><a href="#services">Emergency Care</a></li>
+          <li><a href="#services">Dental Radiology</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Clinic</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Patient Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#schedule">Hours &amp; Booking</a></li>
+          <li><a href="#contact">Find Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+639544055391">0954 405 5391</a></li>
+          <li><a href="tel:+639064353619">0906 435 3619</a></li>
+          <li><a href="mailto:dental.talks@yahoo.com">dental.talks@yahoo.com</a></li>
+          <li><a href="https://maps.app.goo.gl/qbGk37Xyy9yruc2S6" target="_blank">Roxas City, Capiz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 CAPIZDENTA. All rights reserved. Roxas City, Capiz, Philippines.</span>
+      <span class="footer-quote">"Don't let the world change your smile. Use your smile to change the world."</span>
+    </div>
   </footer>
 
-  <!-- ✅ FIXED JS PATH -->
-  <script src="main.js"></script>
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast">✅ Appointment request submitted! We'll contact you shortly.</div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="btt" title="Back to top">↑</button>
+
+  <!-- Main JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="module" src="main.js"></script>
 
 </body>
 </html>
